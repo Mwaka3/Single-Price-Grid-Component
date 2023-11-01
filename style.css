@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700&family=Karla:wght@400;700&family=Lexend+Deca:wght@400;700&family=Poppins:wght@200;300&family=Work+Sans:ital,wght@0,300;1,300&display=swap');
+:root
+{
+    --cyan:  hsl(179, 62%, 43%);
+    --bright-yellow: hsl(71, 73%, 54%);
+    --light-gray: hsl(204, 43%, 93%);
+    --graish-blue:  hsl(218, 22%, 67%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Karla;
+}
+body{
+    font-size: 16px;
+    background: var(--graish-blue);
+    height: 100vh;
+}
+
+button{
+    display: inline-block;
+    padding: 15px;
+    background: var(--bright-yellow);
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+.grid-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.cta{
+    display: grid;
+    gap: 20px;
+    padding: 2em;
+    font-size: 13px;
+}
+.cta p{
+    line-height: 25px;
+}
+
+.grid{
+    padding: 1.5em;
+    display: grid;
+    grid-template-areas: 
+    "intro"
+    "cta1"
+    "cta2"
+}
+
+.intro{
+    background: white;
+    border-radius: 5px 5px 0 0;
+    color: hsl(203, 15%, 76%);
+    grid-area: intro;
+}
+.intro h2{
+    color: var(--cyan);
+}
+.intro h3{
+    color: var(--bright-yellow);
+}
+
+.cta1{
+    background: var(--cyan);
+    grid-area: cta1;
+}
+.cta1 h2{
+    color: var(--light-gray);
+}
+.cta1 p{
+    color: var(--light-gray);
+}
+.sub-details {
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+    margin-bottom: -15px;
+}
+.cta-price{
+    color: var(--light-gray);
+    font-size: 2em;
+    font-weight: 700;
+}
+.sub-details .cta-info{
+    color: rgb(193, 193, 193);
+}
+
+.cta2{
+    grid-area: cta2;
+    background: hsl(180, 43%, 64%);
+    color: var(--light-gray);
+    border-radius: 0 0 5px 5px;
+}
+.cta2 ul{
+    padding-right: 5em;
+    line-height: 1.5em;
+    list-style: none;
+    color: hsl(204, 43%, 86%);
+}
+/* FOOTER */
+.attribution{ 
+    font-size: 11px; text-align: center; 
+    margin-bottom: 10px;
+}
+.attribution a{ 
+    color: hsl(228, 45%, 44%); 
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 700px){
+   
+    .grid{
+        max-width: 590px;
+        grid-template-areas: 
+        "intro  intro"
+        "cta1   cta2"
+    }
+    .intro{
+        grid-area: intro;
+    }
+    .cta1{
+        grid-area: cta1;
+        border-radius: 0 0 0 5px;
+    }
+    .cta2{
+        grid-area: cta2;
+        border-radius: 0 0 5px 0;
+    }
+}
